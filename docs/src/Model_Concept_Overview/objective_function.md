@@ -4,7 +4,7 @@ The objective function of GenX minimizes total annual electricity system costs o
 
 
 ```math
-\begin{align}
+\begin{align*}
     \text{min} \quad
     &\sum_{y \in \mathcal{G}} \sum_{z \in \mathcal{Z}} \left((\pi^{INVEST}_{y,z} \times \overline{\Omega}^{size}_{y,z} \times  \Omega_{y,z}) + (\pi^{FOM}_{y,z} \times \overline{\Omega}^{size}_{y,z} \times  \Delta^{total}_{y,z})\right) +  \\
     &\sum_{y \in \mathcal{O}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST,energy}_{y,z} \times    \Omega^{energy}_{y,z}) + (\pi^{FOM,energy}_{y,z} \times  \Delta^{total,energy}_{y,z})\right) +  \\
@@ -12,36 +12,36 @@ The objective function of GenX minimizes total annual electricity system costs o
     & \sum_{y \in \mathcal{G}} \sum_{z \in \mathcal{Z}} \sum_{t \in \mathcal{T}} \left( \omega_{t}\times(\pi^{VOM}_{y,z} + \pi^{FUEL}_{y,z})\times \Theta_{y,z,t}\right) + \sum_{y \in \mathcal{O \cup DF} } \sum_{z \in \mathcal{Z}} \sum_{t \in \mathcal{T}} \left( \omega_{t}\times\pi^{VOM,charge}_{y,z} \times \Pi_{y,z,t}\right) + \\
     &\sum_{s \in \mathcal{S}} \sum_{z \in \mathcal{Z}} \sum_{t \in \mathcal{T}} \left(\omega_{t} \times n_{s}^{slope} \times \Lambda_{s,z,t}\right) + \sum_{t \in \mathcal{T}} \left(\omega_{t} \times \pi^{unmet}_{rsv} \times r^{unmet}_{t}\right) + \\
     &\sum_{y \in \mathcal{H}} \sum_{z \in \mathcal{Z}} \sum_{t \in \mathcal{T}}\left(\omega_{t} \times \pi^{START}_{y,z} \times \chi_{s,z,t}\right) +  \\
-\end{align}
+\end{align*}
 ```
 ```math
-\begin{align}
+\begin{align*}
     & \sum_{l \in \mathcal{L}}\left(\pi^{TCAP}_{l} \times \bigtriangleup\varphi^{max}_{l}\right) + \\
-    &\sum_{y \in \mathcal{VS}^{inv}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST, inv}_{y,z} \times \Omega^{inv}_{y,z})
+    & \sum_{y \in \mathcal{VS}^{inv}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST, inv}_{y,z} \times \Omega^{inv}_{y,z})
     + (\pi^{FOM, inv}_{y,z} \times  \Delta^{total,inv}_{y,z})\right) + \\
-    &\sum_{y \in \mathcal{VS}^{pv}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST, pv}_{y,z} \times \Omega^{pv}_{y,z})
+    & \sum_{y \in \mathcal{VS}^{pv}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST, pv}_{y,z} \times \Omega^{pv}_{y,z})
     + (\pi^{FOM, pv}_{y,z} \times  \Delta^{total,pv}_{y,z})\right) + \\
-    &\sum_{y \in \mathcal{VS}^{wind}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST, wind}_{y,z} \times \Omega^{wind}_{y,z})
+    & \sum_{y \in \mathcal{VS}^{wind}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST, wind}_{y,z} \times \Omega^{wind}_{y,z})
     + (\pi^{FOM, wind}_{y,z} \times  \Delta^{total,wind}_{y,z})\right) + \\
-    &\sum_{y \in \mathcal{VS}^{asym,dc,dis}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST,dc,dis}_{y,z} \times \Omega^{dc,dis}_{y,z})
+    & \sum_{y \in \mathcal{VS}^{asym,dc,dis}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST,dc,dis}_{y,z} \times \Omega^{dc,dis}_{y,z})
     + (\pi^{FOM,dc,dis}_{y,z} \times  \Delta^{total,dc,dis}_{y,z})\right) + \\
-    &\sum_{y \in \mathcal{VS}^{asym,dc,cha}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST,dc,cha}_{y,z} \times \Omega^{dc,cha}_{y,z})
+    & \sum_{y \in \mathcal{VS}^{asym,dc,cha}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST,dc,cha}_{y,z} \times \Omega^{dc,cha}_{y,z})
     + (\pi^{FOM,dc,cha}_{y,z} \times  \Delta^{total,dc,cha}_{y,z})\right) + \\
-    &\sum_{y \in \mathcal{VS}^{asym,ac,dis}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST,ac,dis}_{y,z} \times \Omega^{ac,dis}_{y,z})
+    & \sum_{y \in \mathcal{VS}^{asym,ac,dis}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST,ac,dis}_{y,z} \times \Omega^{ac,dis}_{y,z})
     + (\pi^{FOM,ac,dis}_{y,z} \times  \Delta^{total,ac,dis}_{y,z})\right) + \\
-    &\sum_{y \in \mathcal{VS}^{asym,ac,cha}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST,ac,cha}_{y,z} \times \Omega^{ac,cha}_{y,z})
-    + (\pi^{FOM,ac,cha}_{y,z} \times  \Delta^{total,ac,cha}_{y,z})\right) + \\
-\end{align}
+    & \sum_{y \in \mathcal{VS}^{asym,ac,cha}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST,ac,cha}_{y,z} \times \Omega^{ac,cha}_{y,z})
+    + (\pi^{FOM,ac,cha}_{y,z} \times  \Delta^{total,ac,cha}_{y,z})\right) + \qquad \qquad \\
+\end{align*}
 ```
 ```math
-\begin{align}
+\begin{align*}
     & \sum_{y \in \mathcal{VS}^{pv}} \sum_{z \in \mathcal{Z}} \sum_{t \in \mathcal{T}} \left( \omega_{t}\times\pi^{VOM,pv}_{y,z}\times \eta^{inverter}_{y,z} \times \Theta^{pv}_{y,z,t}\right) + \\
     & \sum_{y \in \mathcal{VS}^{wind}} \sum_{z \in \mathcal{Z}} \sum_{t \in \mathcal{T}} \left( \omega_{t}\times\pi^{VOM,wind}_{y,z} \times \Theta^{wind}_{y,z,t}\right) + \\
     & \sum_{y \in \mathcal{VS}^{sym,dc} \cup \mathcal{VS}^{asym,dc,dis}} \sum_{z \in \mathcal{Z}} \sum_{t \in \mathcal{T}} \left( \omega_{t}\times\pi^{VOM,dc,dis}_{y,z} \times\eta^{inverter}_{y,z} \times \Theta^{dc}_{y,z,t}\right) + \\
     & \sum_{y \in \mathcal{VS}^{sym,dc} \cup \mathcal{VS}^{asym,dc,cha}} \sum_{z \in \mathcal{Z}} \sum_{t \in \mathcal{T}} \left( \omega_{t}\times\pi^{VOM,dc,cha}_{y,z} \times \frac{\Pi^{dc}_{y,z,t}}{\eta^{inverter}_{y,z}}\right) + \\
     & \sum_{y \in \mathcal{VS}^{sym,ac} \cup \mathcal{VS}^{asym,ac,dis}} \sum_{z \in \mathcal{Z}} \sum_{t \in \mathcal{T}} \left( \omega_{t}\times\pi^{VOM,ac,dis}_{y,z} \times \Theta^{ac}_{y,z,t}\right) + \\
-    & \sum_{y \in \mathcal{VS}^{sym,ac} \cup \mathcal{VS}^{asym,ac,cha}} \sum_{z \in \mathcal{Z}} \sum_{t \in \mathcal{T}} \left( \omega_{t}\times\pi^{VOM,ac,cha}_{y,z} \times \Pi^{ac}_{y,z,t}\right)
-\end{align}
+    & \sum_{y \in \mathcal{VS}^{sym,ac} \cup \mathcal{VS}^{asym,ac,cha}} \sum_{z \in \mathcal{Z}} \sum_{t \in \mathcal{T}} \left( \omega_{t}\times\pi^{VOM,ac,cha}_{y,z} \times \Pi^{ac}_{y,z,t}\right) \qquad \qquad \qquad \qquad \qquad \qquad \quad
+\end{align*}
 ```
 
 
