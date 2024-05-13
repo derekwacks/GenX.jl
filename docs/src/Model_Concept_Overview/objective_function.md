@@ -50,7 +50,7 @@ The first summation represents the fixed costs of generation/discharge over all 
 The second summation corresponds to the fixed cost of installed energy storage capacity and is summed over only the storage resources ($`y \in \mathcal{O} \cup \mathcal{VS}^{stor}`$).
 This term includes the sum of the annualized energy capital cost, $`\pi^{INVEST,energy}_{y,z}`$, times the total new energy capacity added (if any), plus the Fixed O&M cost, $`\pi^{FOM, energy}_{y,z}`$, times the net installed energy storage capacity, $`\Delta^{total}_{y,z}`$ (e.g., existing capacity less retirements plus additions).
 
-The third summation corresponds to the fixed cost of installed charging power capacity and is summed over only over storage resources with independent/asymmetric charge and discharge power components ($`y \in \mathcal{O}^{asym}`$).
+The third summation corresponds to the fixed cost of installed charging power capacity and is summed only over storage resources with independent/asymmetric charge and discharge power components ($`y \in \mathcal{O}^{asym}`$).
 This term includes the sum of the annualized charging power capital cost, $`\pi^{INVEST,charge}_{y,z}`$, times the total new charging power capacity added (if any), plus the Fixed O&M cost, $`\pi^{FOM, energy}_{y,z}`$, times the net installed charging power capacity, $`\Delta^{total}_{y,z}`$ (e.g., existing capacity less retirements plus additions).
 
 The fourth and fifth summations correspond to the operational cost across all zones, technologies, and time steps.
