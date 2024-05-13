@@ -21,7 +21,7 @@ The objective function of GenX minimizes total annual electricity system costs o
     + (\pi^{FOM, inv}_{y,z} \times  \Delta^{total,inv}_{y,z})\right) + \\
     &\sum_{y \in \mathcal{VS}^{pv}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST, pv}_{y,z} \times \Omega^{pv}_{y,z})
     + (\pi^{FOM, pv}_{y,z} \times  \Delta^{total,pv}_{y,z})\right) + \\
-    &\sum_{y \in \mathcal{VS}^{wind}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST, wind}_{y,z} \times \Omega^{pv}_{y,z})
+    &\sum_{y \in \mathcal{VS}^{wind}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST, wind}_{y,z} \times \Omega^{wind}_{y,z})
     + (\pi^{FOM, wind}_{y,z} \times  \Delta^{total,wind}_{y,z})\right) + \\
     &\sum_{y \in \mathcal{VS}^{asym,dc,dis}} \sum_{z \in \mathcal{Z}} \left( (\pi^{INVEST,dc,dis}_{y,z} \times \Omega^{dc,dis}_{y,z})
     + (\pi^{FOM,dc,dis}_{y,z} \times  \Delta^{total,dc,dis}_{y,z})\right) + \\
@@ -67,7 +67,7 @@ The ninth term corresponds to the transmission reinforcement or construction cos
 Transmission reinforcement costs are equal to the sum across all lines of the product between the transmission reinforcement/construction cost, $`\pi^{TCAP}_{l}`$, times the additional transmission capacity variable, $`\bigtriangleup\varphi^{max}_{l}`$. Note that fixed O&M and replacement capital costs (depreciation) for existing transmission capacity is treated as a sunk cost and not included explicitly in the GenX objective function.
 
 The tenth term onwards specifically relates to the breakdown investment, fixed O&M, and variable O&M costs associated with each configurable component of a co-located VRE and storage resource.
-The tenth term represents to the fixed cost of installed inverter capacity and is summed over only the co-located resources with an inverter component ($`y \in \mathcal{VS}^{inv}`$).
+The tenth term represents the fixed cost of installed inverter capacity and is summed over only the co-located resources with an inverter component ($`y \in \mathcal{VS}^{inv}`$).
 This term includes the sum of the annualized inverter capital cost, $`\pi^{INVEST,inv}_{y,z}`$, times the total new inverter capacity added (if any), plus the Fixed O&M cost, $`\pi^{FOM, inv}_{y,z}`$, times the net installed inverter capacity, $`\Delta^{total,inv}_{y,z}`$ (e.g., existing capacity less retirements plus additions).
 The eleventh term represents the fixed cost of installed solar PV capacity and is summed over only the co-located resources with a solar PV component ($`y \in \mathcal{VS}^{pv}`$).
 This term includes the sum of the annualized solar PV capital cost, $`\pi^{INVEST,pv}_{y,z}`$, times the total new solar PV capacity added (if any), plus the Fixed O&M cost, $`\pi^{FOM, pv}_{y,z}`$, times the net installed solar PV capacity, $`\Delta^{total,pv}_{y,z}`$ (e.g., existing capacity less retirements plus additions).
